@@ -56,6 +56,7 @@ ISSUER=<your Auth0 data>
     ```
     
 
+
 1. You'll get an object as response, put `access_token` field in an environmental variable:<br /><br />
 `TOKEN=<access_token from Auth0>`<br /><br />
 1. Consume our protected endpoint!<br /><br />
