@@ -1,0 +1,16 @@
+# This file it is useful if you want to configure CodePipeline
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  build:
+    commands:
+      - npm i
+      # - export BUCKET=<S3 bucket name> or add this environmental variable with CodeBuild GUI
+      - aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
+artifacts:
+  type: zip
+  files:
+    - template.yml
+    - outputtemplate.yml
