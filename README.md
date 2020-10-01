@@ -62,7 +62,7 @@ ISSUER=<your Auth0 data>
 You should receive the message "Autenticated call", you can also `curl` without the header part and you will get "Unauthorized"
 
 ### Cleanup
-After you do the frontend part and you are done with the project run this to delete the created resources:
+Run this to delete the created resources:
 ```bash
 aws cloudformation delete-stack --stack-name $STACK
 aws s3 rm s3://$STACK-stack-package --recursive
