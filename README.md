@@ -42,7 +42,7 @@ ISSUER=<your Auth0 data>
 `aws s3 mb s3://$STACK-stack-package`<br /><br />
 1. Deploy it!<br /><br />
 `bash deploy.sh $STACK`<br /><br />
-1. Once CloudFormation finishes, it will output the root url for our protected API endpoint, save it in an environmental variable as we will need later but pay attention to not copy the last trailing slash "/"<br /><br />
+1. Once CloudFormation finishes, it will output the root url for our protected API endpoint, save it in an environmental variable as we will need it later:<br /><br />
 `API=<CloudFormation output>`
 
 ### Check ✔️

@@ -50,4 +50,4 @@ Outputs:
 
   ApiUrl:
     Description: "API endpoint URL"
-    Value: !Sub 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/dev/'
+    Value: !Sub 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/dev'
