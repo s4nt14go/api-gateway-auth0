@@ -1,0 +1,4 @@
+.aws-sam/
+/template-package.yaml
+/auth0/.env
+/old.sh
