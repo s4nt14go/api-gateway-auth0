@@ -1,4 +1,4 @@
-# This file it is useful if you want to configure CodePipeline
+# This file it is useful if you want to configure CodePipeline, follow this tutorial for help: https://medium.com/fyf-engineering/building-a-continuous-delivery-pipeline-for-a-aws-lambda-application-using-github-repository-8e2b5a9c7001
 version: 0.2
 phases:
   install:
@@ -6,15 +6,15 @@ phases:
       nodejs: 12
   build:
     commands:
-      # - npm i
-      - cd auth0 && npm i
+      - cd auth0 && npm i   # Remember to set environmental variables AUDIENCE and ISSUER in lambda
       - cd ../hello && npm i && cd ..
+
       # - export BUCKET=stack1-codepipeline or add this environmental variable with CodeBuild GUI (type: plaintext).
       # First you should create it running:
       # BUCKET=stack1-codepipeline
       # aws s3 mb s3://$BUCKET
-      # All the steps can be done following https://medium.com/fyf-engineering/building-a-continuous-delivery-pipeline-for-a-aws-lambda-application-using-github-repository-8e2b5a9c7001
       - aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
+
 artifacts:
   type: zip
   files:
