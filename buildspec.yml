@@ -6,8 +6,14 @@ phases:
       nodejs: 12
   build:
     commands:
-      - npm i
-      # - export BUCKET=<S3 bucket name> or add this environmental variable with CodeBuild GUI
+      # - npm i
+      - cd auth0 && npm i
+      - cd ../hello && npm i && cd ..
+      # - export BUCKET=stack1-codepipeline or add this environmental variable with CodeBuild GUI (type: plaintext).
+      # First you should create it running:
+      # BUCKET=stack1-codepipeline
+      # aws s3 mb s3://$BUCKET
+      # All the steps can be done following https://medium.com/fyf-engineering/building-a-continuous-delivery-pipeline-for-a-aws-lambda-application-using-github-repository-8e2b5a9c7001
       - aws cloudformation package --template-file template.yml --s3-bucket $BUCKET --output-template-file outputtemplate.yml
 artifacts:
   type: zip

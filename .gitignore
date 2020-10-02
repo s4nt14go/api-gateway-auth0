@@ -1,4 +1,4 @@
 .aws-sam/
 /template-package.yaml
 /auth0/.env
-/notes.txt
+/notes/
