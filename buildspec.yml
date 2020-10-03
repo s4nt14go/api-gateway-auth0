@@ -6,8 +6,6 @@ phases:
       nodejs: 12
   build:
     commands:
-#      - cd auth0 && npm i   # Remember to set environmental variables AUDIENCE and ISSUER in lambda
-#      - cd ../hello && npm i && cd ..
       - sam build
 
       # - export BUCKET=stack1-codepipeline or add this environmental variable with CodeBuild GUI (type: plaintext).

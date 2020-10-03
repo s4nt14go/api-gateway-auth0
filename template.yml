@@ -1,5 +1,5 @@
-AWSTemplateFormatVersion: '2010-09-09'
-Transform: 'AWS::Serverless-2016-10-31'
+AWSTemplateFormatVersion: 2010-09-09
+Transform: AWS::Serverless-2016-10-31
 
 Parameters:
   StageName:
@@ -14,9 +14,9 @@ Resources:
       StageName:
         Ref: StageName
       Cors: 
-        AllowMethods: "'*'"
-        AllowHeaders: "'*'"
-        AllowOrigin: "'*'"
+        AllowMethods: '*'
+        AllowHeaders: '*'
+        AllowOrigin: '*'
       Auth:
         DefaultAuthorizer: MyLambdaTokenAuthorizer
         AddDefaultAuthorizerToCorsPreflight: False
@@ -25,7 +25,7 @@ Resources:
             FunctionArn: !GetAtt Auth0ValidatorFunction.Arn
                 
   HelloFunction:
-    Type: 'AWS::Serverless::Function'
+    Type: AWS::Serverless::Function
     Properties:
       Handler: hello.handler
       Runtime: nodejs12.x
@@ -39,7 +39,7 @@ Resources:
             Method: GET
     
   Auth0ValidatorFunction:
-    Type: 'AWS::Serverless::Function'
+    Type: AWS::Serverless::Function
     Properties:
       Handler: auth0Validator.handler
       Runtime: nodejs12.x
@@ -47,13 +47,13 @@ Resources:
 
 Outputs:
   Region:
-    Description: "Region"
+    Description: Region
     Value: !Ref AWS::Region
 
   ApiId:
-    Description: "API ID"
+    Description: API ID
     Value: !Ref MyApi
 
   ApiUrl:
-    Description: "API endpoint URL"
-    Value: !Sub 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}'
+    Description: API endpoint URL
+    Value: !Sub https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}
