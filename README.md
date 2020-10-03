@@ -45,6 +45,8 @@ ISSUER=<your Auth0 data>
 1. Once CloudFormation finishes, it will output the root url for our protected API endpoint, save it in an environmental variable as we will need it later:<br /><br />
 `API=<CloudFormation output>`
 
+`TIP`: As any resource you put facing the public internet it may be a good idea to limit the API Gateway use by enabling throttling and setting rate to 10 and burst to 5 with the AWS console. SAM creates the `dev` stage and also another default `Stage`, limit both. 
+
 ### Check ✔️
 
 1. Get a token from Auth0 going to the Test tab in your API, there grab the command that should look something like this:<br /><br />

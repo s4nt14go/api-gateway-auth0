@@ -1,12 +1,18 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: 'AWS::Serverless-2016-10-31'
 
+Parameters:
+  StageName:
+    Default: dev
+    Type: String
+
 Resources:
 
   MyApi:
     Type: AWS::Serverless::Api
     Properties:
-      StageName: dev
+      StageName:
+        Ref: StageName
       Cors: 
         AllowMethods: "'*'"
         AllowHeaders: "'*'"
@@ -50,4 +56,4 @@ Outputs:
 
   ApiUrl:
     Description: "API endpoint URL"
-    Value: !Sub 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/dev'
+    Value: !Sub 'https://${MyApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}'
