@@ -14,9 +14,9 @@ Resources:
       StageName:
         Ref: StageName
       Cors: 
-        AllowMethods: '*'
-        AllowHeaders: '*'
-        AllowOrigin: '*'
+        AllowMethods: "'*'"
+        AllowHeaders: "'*'"
+        AllowOrigin: "'*'"
       Auth:
         DefaultAuthorizer: MyLambdaTokenAuthorizer
         AddDefaultAuthorizerToCorsPreflight: False
