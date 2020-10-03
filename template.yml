@@ -13,17 +13,17 @@ Resources:
     Properties:
       StageName:
         Ref: StageName
-      Cors: 
+      Cors:
         AllowMethods: "'*'"
         AllowHeaders: "'*'"
         AllowOrigin: "'*'"
       Auth:
         DefaultAuthorizer: MyLambdaTokenAuthorizer
         AddDefaultAuthorizerToCorsPreflight: False
-        Authorizers: 
+        Authorizers:
           MyLambdaTokenAuthorizer:
             FunctionArn: !GetAtt Auth0ValidatorFunction.Arn
-                
+
   HelloFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -37,7 +37,7 @@ Resources:
             RestApiId: !Ref MyApi
             Path: /hello
             Method: GET
-    
+
   Auth0ValidatorFunction:
     Type: AWS::Serverless::Function
     Properties:
