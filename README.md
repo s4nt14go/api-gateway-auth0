@@ -10,6 +10,8 @@
 
 We will build an endpoint protected with Auth0, only those applications with the correct Auth0 credentials will be able to consume our endpoint. Last but not least, all serverless using AWS Serverless Application Model (SAM) 💫
 
+Check this [other repo (branch auth0)](https://github.com/s4nt14go/react-starter/tree/auth0) for the frontend, it has a demo link!  
+
 ### Requirements
 
 * [Auth0 account](https://auth0.com)
