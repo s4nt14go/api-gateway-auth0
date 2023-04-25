@@ -9,5 +9,5 @@ if [ "$1" == "h" ]; then
 fi
 
 sam build
-sam package --s3-bucket $1-stack-package --template-file .aws-sam/build/template.yaml --output-template-file template-package.yaml
-sam deploy --template-file template-package.yaml --stack-name $1 --capabilities CAPABILITY_IAM
+sam package --s3-bucket $1-stack-package --template-file .aws-sam/build/template.yaml --output-template-file template-package.yaml --region us-east-1
+sam deploy --template-file template-package.yaml --stack-name $1 --capabilities CAPABILITY_IAM --region us-east-1
