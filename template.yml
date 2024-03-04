@@ -28,7 +28,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: hello.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs20.x
       CodeUri: ./hello
       Events:
         HelloAPI:
@@ -42,7 +42,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: auth0Validator.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs20.x
       CodeUri: ./auth0
 
 Outputs:

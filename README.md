@@ -42,6 +42,7 @@ ISSUER=<your Auth0 data>
 `STACK=<name it>`<br /><br />
 1. Create a bucket where we will upload the need files to AWS<br /><br />
 `aws s3 mb s3://$STACK-stack-package`<br /><br />
+> The bucket namespace is shared between all AWS users, so if you happen to choose an already taken one, try with another name. 
 1. Deploy it!<br /><br />
 `bash deploy.sh $STACK`<br /><br />
 1. Once CloudFormation finishes, it will output the root url for our protected API endpoint, save it in an environmental variable as we will need it later:<br /><br />
